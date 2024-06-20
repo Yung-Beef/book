@@ -192,7 +192,7 @@ need to do, then, is add a `use` statement for `trpl::StreamExt`, as in Listing
  </Listing>
 
 Of course, in the real world, the only time we would be directly converting an
-iterator to a stream like this is to help break up longer chunks of  work, like
+iterator to a stream like this is to help break up longer chunks of work, like
 we discussed in the previous section. There are more interesting things we can
 do with streams, though!
 
@@ -203,9 +203,8 @@ system at a time, or data arriving over the network over time. For another
 thing, since streams are futures, we can use them with any other kind of
 future, and we can combine them in interesting ways.
 
-This is the kind of thing we might actually do to help break up longer chunks of
-work, like we discussed in the previous section—though of course, presumably
-with more interesting iterators than this one!
+For example, we can take two streams and merge them together, with a timeout on
+how long any individual item in a stream is allowed to take.
 
 <!--
   - Maybe motivate with “doing some work” where that work is simple enough in
